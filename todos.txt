@@ -1,24 +1,24 @@
 30/07/2021
 ########################################################################################################################
 
- # change okta to developer one instead of organisation
+    # (DONE) change okta to developer version instead of organisation one
 
- # setup CLI to connect to aws via okta
+    # setup CLI to connect to aws via okta
 
- # add developer role to aws
-    - s3FullAccess
-    - ec2FullAccess
-    - readAll?
+    # (DONE) add a developer role to aws
+        - s3FullAccess
+        - ec2FullAccess
+        - readAll?
 
- # create a tfm module that bootstraps vpc on new account - module gets input variables from .tfvars file
-    - vpc - cidr
-    - subnets - cidr, internet gateway, routing, NAT (could be costly)
-        - public / private
-    - routing tables associations
-    - NACLs
-    - check pricing
+    # create a tfm module that bootstraps vpc on new account - module gets input variables from .tfvars file
+        - vpc - cidr
+        - subnets - cidr, internet gateway, routing, NAT (could be costly)
+            - public / private
+        - routing tables associations
+        - NACLs
+        - check pricing
 
-    * create resources manually instead of using pre-defined modules to better learn how stuff is created
-    * run sample ec2 with hello world ami
+        * create resources manually instead of using pre-defined modules to better learn how stuff is created
+        * run sample ec2 with hello world ami
 
 ########################################################################################################################
