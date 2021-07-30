@@ -1,5 +1,5 @@
 terraform {
-  required_version = ">= 0.13"
+  required_version = "= 1.0.3"
 
   required_providers {
     aws = {
@@ -9,9 +9,13 @@ terraform {
   }
 
   backend "s3" {
-    profile = "mentee"
     region  = "eu-central-1"
     key     = "terraform.tfstate"
-    bucket  = "big-platform-config-bucket"
+    bucket  = "big-platform-tfm"
   }
+}
+
+provider "aws" {
+  alias   = "eu-central-1"
+  region  = "eu-central-1"
 }
