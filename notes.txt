@@ -9,8 +9,22 @@ provisioners
     }
 
     provisioner "local-exec" {
-      wheb    = destroy
+      when    = destroy
       command = "echo '1' > status.txt"
     }
 
   }
+
+state commands
+
+  - terraform state list   - lists all resources tracked by Terraform State file
+  - terraform state rm     - remove resource from being tracked
+  - terraform state show   - get details of tracked resource
+
+provider docker -> terraform instead of docker-compose?
+
+Remote state storage
+  - save state remotely, e.g. to S3
+  - allows sharing state file between distributed teams
+  - allows locking state so parallel executions do not coincide
+  - enables sharing output values with other Terraform configuration or code

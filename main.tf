@@ -1,16 +1,10 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 3.51.0"
-    }
-  }
+provider "aws" {
+  profile = "mentee"
+  alias   = "eu-central-1"
+  region  = "eu-central-1"
 }
 
-provider "aws" {
-  alias  = "eu-central-1"
-  region = "eu-central-1"
-
-  shared_credentials_file = "$HOME/.aws/credentials"
-  profile                 = "mentee"
+resource "aws_sns_topic" "test_topic" {
+  provider = aws.eu-central-1
+  name     = "topic-test"
 }
