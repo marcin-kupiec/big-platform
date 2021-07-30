@@ -3,7 +3,8 @@
 
     # (DONE) change okta to developer version instead of organisation one
 
-    # setup CLI to connect to aws via okta
+    # (DONE) setup CLI to connect to aws via okta
+        - gimme-aws-creds --profile gb-admin
 
     # (DONE) add a developer role to aws
         - s3FullAccess
