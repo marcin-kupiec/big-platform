@@ -1,5 +1,5 @@
 terraform {
-  required_version = ">= 0.13"
+  required_version = "= 1.0.3"
 
   required_providers {
     aws = {
@@ -12,6 +12,12 @@ terraform {
     profile = "mentee"
     region  = "eu-central-1"
     key     = "terraform.tfstate"
-    bucket  = "big-platform-config-bucket"
+    bucket  = "big-platform-tfm"
+    dynamodb_table = "terraform-locks"
   }
+}
+
+provider "aws" {
+  profile = "mentee"
+  region = "eu-central-1"
 }
