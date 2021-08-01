@@ -30,3 +30,11 @@ Remote state storage
 
 Terraform apply locks
   - use of the dynamodb table with a LockID string field
+
+Terraform workspaces
+    - allows to have different states for each workspace
+    - can use {terraform.workspace} to distinguish configuration
+        e.g.    tag: Name = {terraform.workspace}.ec2
+                replicas = {terraform.workspace} = "default" ? 5 : 2
+    - could be useful to have e.g. production and integration envs?
+        - same tfm code but for int less replicas, etc
