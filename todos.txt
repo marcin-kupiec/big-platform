@@ -22,4 +22,8 @@
         * create resources manually instead of using pre-defined modules to better learn how stuff is created
         * run sample ec2 with hello world ami
 
+    questions:
+        - how to create one NAT per AZ and create appropriate routing table associations
+
+
 ########################################################################################################################
