@@ -24,6 +24,6 @@
 
     questions:
         - how to create one NAT per AZ and create appropriate routing table associations
-
+        - is usage of workspaces handy? e.g. integration/production envs
 
 ########################################################################################################################
