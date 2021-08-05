@@ -10,10 +10,11 @@ terraform {
 }
 
 resource "aws_vpc" "main" {
-  cidr_block = var.vpc_cidr
+  cidr_block           = var.vpc_cidr
+  enable_dns_hostnames = true
 
   tags = {
-    Name        = "vpc-main-${var.infra_env}"
+    Name        = "main-${var.infra_env}"
     Environment = var.infra_env
     Terraform   = true
   }
@@ -39,7 +40,7 @@ resource "aws_subnet" "public" {
   cidr_block        = var.public_subnets[count.index]
 
   tags = {
-    Name        = "subnet-public"
+    Name        = "public-${var.infra_env}"
     Environment = var.infra_env
     Terraform   = true
     Tier        = "Public"
@@ -54,7 +55,7 @@ resource "aws_subnet" "private" {
   cidr_block        = var.private_subnets[count.index]
 
   tags = {
-    Name        = "subnet-private"
+    Name        = "private-${var.infra_env}"
     Environment = var.infra_env
     Terraform   = true
     Tier        = "Private"
@@ -67,7 +68,7 @@ resource "aws_internet_gateway" "main" {
   vpc_id = aws_vpc.main.id
 
   tags = {
-    Name        = "igw-main"
+    Name        = "main-${var.infra_env}"
     Environment = var.infra_env
     Terraform   = true
   }
@@ -82,22 +83,12 @@ resource "aws_nat_gateway" "main" {
   subnet_id     = element(aws_subnet.public.*.id, 0)
 
   tags = {
-    Name        = "nat-gw"
+    Name        = "main-${var.infra_env}"
     Environment = var.infra_env
     Terraform   = true
   }
 
   depends_on = [aws_internet_gateway.main]
-}
-
-resource "aws_vpn_gateway" "main" {
-  vpc_id = aws_vpc.main.id
-
-  tags = {
-    Name        = "vgw-main"
-    Environment = var.infra_env
-    Terraform   = true
-  }
 }
 
 // route tables
