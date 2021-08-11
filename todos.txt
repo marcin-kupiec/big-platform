@@ -26,4 +26,25 @@
         - how to create one NAT per AZ and create appropriate routing table associations
         - is usage of workspaces handy? e.g. integration/production envs
 
+06/08/2021
+########################################################################################################################
+
+    # aws organizations
+        - make a provider to assume role in salve account and inject it to custom terraform module
+        - accounts: non-prod, prod
+            finance - all billing data go there
+            security - all logs go there
+
+        - pass different variables for each account (file with variables per account)
+        - transit gateway in master account between accounts
+
+        - new repo - organization to configure accounts
+        - new account using terraform - provider per account -> assume role
+
+        - configure okta thru code?
+
+    https://docs.aws.amazon.com/whitepapers/latest/organizing-your-aws-environment/organizing-your-aws-environment.pdf
+    https://terragrunt.gruntwork.io/
+    https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html
+
 ########################################################################################################################
