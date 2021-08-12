@@ -3,13 +3,13 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | = 1.0.3 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | = 1.0.3 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 3.51.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 3.51.0 |
 
 ## Providers
 
-| Name | Version |
-|------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 3.51.0 |
+No providers.
 
 ## Modules
 
@@ -19,10 +19,7 @@
 
 ## Resources
 
-| Name | Type |
-|------|------|
-| [aws_instance.web](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance) | resource |
-| [aws_ami.ubuntu](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/ami) | data source |
+No resources.
 
 ## Inputs
 
@@ -36,6 +33,4 @@
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| <a name="output_web_address"></a> [web\_address](#output\_web\_address) | n/a |
+No outputs.
